@@ -1,0 +1,7 @@
+.header{
+    display: flex;
+    align-items: center;
+    color: azure;
+    justify-content: space-between;
+    background: black;
+}
