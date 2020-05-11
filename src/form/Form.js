@@ -3,6 +3,7 @@ import "./Form.css"
 import axios from 'axios'
 
 
+
 export default class Form extends Component{
    formSubmit = (event) =>{
         event.preventDefault();
@@ -32,7 +33,7 @@ export default class Form extends Component{
     
 
 render(){
-
+     console.log(" form data for editing ",this.props.dataEdit)
     return(
         
          
@@ -43,11 +44,11 @@ render(){
             </div>
              <div className="form-item">
              <label className='f-item input-label' >User Address </label>
-             <input className='f-item input' type="text" onChange={(e) =>{ this.address = e.target.value }}/>
+             <input className='f-item input' type="text" onChange={(e) =>{ this.address = e.target.value }} />
              </div>
              <div className="form-item">
              <label className='f-item input-label' >User Gender </label>
-             <select  className='f-item input-dd' onChange={(e) => {this.gender = e.target.value} }>
+             <select  className='f-item input-dd' onChange={(e) => {this.gender = e.target.value} } >
                 <option >-----</option>
                 <option >Male</option>
                 <option >Female</option>

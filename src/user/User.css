@@ -1,7 +1,7 @@
 .user{
     border: 2px solid #ccc;
     padding: 8px 16px;
-    background: #f5f5f5;
+    background: dimgray;
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
@@ -11,4 +11,25 @@ li, ul {
 }
 .user-atrb{
     flex: 1;
+}
+.user-delete{
+    flex: 1 1;
+    border-radius: 22px;
+    background: black;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 1px;
+    padding-top: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.user-edit{
+    flex: 1 1;
+    border-radius: 22px;
+    background: black;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 1px;
+    padding-top: 8px;
+    cursor: pointer
 }
