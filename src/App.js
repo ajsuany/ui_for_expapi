@@ -72,7 +72,7 @@ render(){
       <Header/>
       <Form loadUserlist={this.loadUserlist}
       pushIntoUserlist={this.pushIntoUserlist}
-      dataEdit  = {this.dataEdit }/>
+      dataEdit  = {this.state.dataEdit }/>
       <Userlist userlist={this.state.userlist}
       onClickedDelete={this.onClickedDelete}
       onClickedEdit = {this.onClickedEdit}/>
