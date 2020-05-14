@@ -15,13 +15,13 @@ export default class Form extends Component{
   }
 
   onChangedName = (e) => {
-    let {name} = this.state;
-     name = e.target.value
-     this.setState({name}) 
+  
+     let name = e.target.value
+     this.setState({name:name}) 
   }
   onChangedAddress = (e) => {
-    let {address} = this.state;
-    address = e.target.value
+    //let {address} = this.state;
+    let address = e.target.value
      this.setState({address}) 
   }
   onChangedGender = (e) => {
@@ -56,19 +56,33 @@ export default class Form extends Component{
        
    }
     
-   editingIssue = () =>{
-    let {name,gender,address} = this.state
-    name = this.props.dataEdit.name
-    address = this.props.dataEdit.address
-    gender = this.props.dataEdit.gender
-     
-     this.setState({name,gender,address})
-   }
+   componentDidUpdate(prevProps, prevState) {
+     let {name,address,gender,_id} = this.props.dataEdit
+    console.log("componentDidUpdate preProps called....",prevProps);
+    console.log("componentDidUpdate Props called>>>>>>>",this.props);
+    console.log("componentDidUpdate  preState called....",prevState);
+    
+    console.log("componentDidUpdate  State called....",this.state);
+    const isPropsSame = (prevProps.dataEdit.name===name && prevProps.dataEdit.address === address && prevProps.dataEdit.gender ===gender )
+    const isStateSame = (prevState.name=== this.state.name && prevState.address === this.state.address && prevState.gender === this.state.gender )
+    if(isPropsSame && isStateSame){
+       console.log("no need to changes ")
+    }
+    else{
+      console.log(" need to changes ")
+     // this.setState({name,address,gender})
+      
+    }
+
+    
+  }
+
 
 render(){
   
    console.log(" anonymous funtion form data for editing ",this.state.name)
-    // console.log(" form data for editing ",this.props.dataEdit.name)
+    //console.log(" form data for editing ",this.props.dataEdit.name)
+    
     return(
         
          
